@@ -1,0 +1,10 @@
+node_modules/
+.wrangler/
+.dev.vars*
+.claude/
+
+# Agent working notes: kept locally, not published
+AGENTS.md
+CLAUDE.md
+HANDOFF.md
+scripts/eval.mjs

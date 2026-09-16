@@ -1,0 +1,21 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "trumpinator",
+  "main": "src/index.js",
+  "compatibility_date": "2026-09-01",
+  "assets": { "directory": "public", "binding": "ASSETS", "not_found_handling": "404-page" },
+  // Served only from the custom domain (attached in the dashboard): its zone's Web Analytics counts the visits.
+  "workers_dev": false,
+  "ai": { "binding": "AI" },
+  // ~17 neurons per post: about 600 posts a day inside the free Workers AI allocation.
+  "vars": { "MODEL": "@cf/google/gemma-4-26b-a4b-it" },
+  // Per-IP cap. Also keeps one abuser from eating the account's daily Workers AI allocation.
+  "ratelimits": [{ "name": "LIMITER", "namespace_id": "1001", "simple": { "limit": 6, "period": 60 } }],
+  // Ready-made preset posts ("preset:<lang>:<chip>:<n>", seeded from presets.json) and hourly per-IP counters ("rl:").
+  "kv_namespaces": [{ "binding": "KV", "id": "587693d8e4d042f7b408fbf971ab2db7" }],
+  // One anonymous data point per API call (outcome, language, country, sizes). Free plan: 100k points a day, kept 3 months.
+  // Off for now: deploys with this binding fail with 10089 until Analytics Engine is enabled on the account,
+  // and the dashboard's Enable only opens "Create dataset". Uncomment once a deploy with it goes through.
+  // "analytics_engine_datasets": [{ "binding": "STATS", "dataset": "trumpinator" }],
+  "observability": { "enabled": true }
+}

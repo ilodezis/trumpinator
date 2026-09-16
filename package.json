@@ -1,0 +1,13 @@
+{
+  "name": "trumpinator",
+  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "test": "node --test",
+    "dev": "wrangler dev --remote"
+  },
+  "devDependencies": {
+    "wrangler": "^4.131.2"
+  }
+}

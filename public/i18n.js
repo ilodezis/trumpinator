@@ -3,7 +3,7 @@
 
 export const STRINGS = {
   en: {
-    docTitle: "Trumpinator",
+    docTitle: "Trumpinator — Trump Text & Post Generator",
     switchLang: "Русская версия",
     breaking: "Breaking",
     ticker: [
@@ -109,7 +109,7 @@ export const STRINGS = {
   },
 
   ru: {
-    docTitle: "Трампинатор",
+    docTitle: "Трампинатор — Генератор текста и постов в стиле Трампа",
     switchLang: "English version",
     breaking: "Срочно",
     ticker: [

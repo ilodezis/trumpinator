@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://trumpinator.ilodezis.com/sitemap.xml

@@ -8,3 +8,6 @@ AGENTS.md
 CLAUDE.md
 HANDOFF.md
 scripts/eval.mjs
+
+# Local agent instructions, never committed
+CLAUDE.local.md
